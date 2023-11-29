@@ -3,11 +3,11 @@ class Display:
         self.id = id
         self.car_park = car_park
         self.message = message
-        self.is_on = False
+        self.is_on = is_on
 
 
     def __str__(self):
-        print(f"Display {id}: Welcome to the car park.")
+        return f'{self.id}: Display is {"is on" if self.is_on else "if off"}'
 
 
 

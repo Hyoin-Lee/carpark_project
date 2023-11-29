@@ -9,7 +9,7 @@ class Sensor(ABC):
         self.car_park = car_park
 
     def __str__(self):
-        ...
+        return f'{self.id}: Sensor is {"is active" if self.is_active else "if active"}'
 
     @abstractmethod
     def update_car_park(self, plate):
