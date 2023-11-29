@@ -62,3 +62,12 @@ Answer the following questions:
 > ![Unit tests](images/Fixed_ValueError_not_raised.png)
 > Error Fixed, test passed
 > 
+> ![Unit tests](images/Assertion_not_equal.png)
+> test_update failed (AssertionNotEqual)
+> 
+> 
+> ![Unit tests](images/Update_modified.png)
+> Code modified
+> 
+> ![Unit tests](images/Fixed_AssertionError.png)
+> Error Fixed, test passed
