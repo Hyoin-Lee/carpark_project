@@ -44,3 +44,21 @@ Answer the following questions:
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
 >    `Dictionary allow for storing various types of data and can hold different kind of information (key-value pairs). Its flexibility enable easy modification and addition (mutable) but dictionary can not take speicific data types as a value for associated with the key`
+> 
+> 
+> 
+> 
+> 
+> 
+
+> ![Unit tests](images/ValueError_not_raised.png)
+> test_removing_a_car_that_does_not_exist failed (AssertionError: ValueError not raised)
+> 
+> 
+> ![Unit tests](images/Raising_ValueError.png)
+> Added raise ValueError
+> 
+> 
+> ![Unit tests](images/Fixed_ValueError_not_raised.png)
+> Error Fixed, test passed
+> 
