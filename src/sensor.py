@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import random
 
+
 class Sensor(ABC):
     def __init__(self,
                  id,
@@ -25,10 +26,12 @@ class Sensor(ABC):
         plate = self._scan_plate()
         self.update_car_park(plate)
 
+
 class EntrySensor(Sensor):
     def update_car_park(self, plate):
         self.car_park.add_car(plate)
         print(f"Incoming 🚘 vehicle detected. Plate: {plate}")
+
 
 class ExitSensor(Sensor):
     def update_car_park(self, plate):
@@ -37,6 +40,3 @@ class ExitSensor(Sensor):
 
     def _scan_plate(self):
         return random.choice(self.car_park.plates)
-
-
-

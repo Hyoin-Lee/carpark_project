@@ -50,7 +50,6 @@ class CarPark:
     def update_displays(self):
         for display in self.displays:
             display.update({"Bays": self.available_bays,
-                            "Temperature": 42,}
+                            "Temperature": 42}
                            )
             print(f"Updating: {display}")
-        # data = {"available_bays": self.available_bays, "temperature": 25}

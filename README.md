@@ -88,5 +88,6 @@ and is responsible for handling the registration of Sensor or Display object.
 
 # test_sensor
 > ![Unit tests](images/TestSensor_all_passed.png)
+> All test passed
 
 
