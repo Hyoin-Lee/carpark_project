@@ -5,7 +5,8 @@ from car_park import CarPark
 
 class TestDisplay(unittest.TestCase):
     def setUp(self):
-        self.display = Display(1, CarPark, "Welcome to the car park", True)
+        self.car_park = CarPark("123 Example Street", 100)
+        self.display = Display(1, self.car_park, "Welcome to the car park", True)
 
     def test_display_initialized_with_all_attributes(self):
         self.assertIsInstance(self.display, Display)
@@ -17,3 +18,6 @@ class TestDisplay(unittest.TestCase):
     def test_update(self):
         self.display.update({"message": "Goodbye"})
         self.assertEqual(self.display.message, "Goodbye")
+
+
+

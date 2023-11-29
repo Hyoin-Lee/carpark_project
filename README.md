@@ -5,7 +5,7 @@ This project is AT3 Project (PRJ) - V2
 
 
 
-This is initial commit. 
+# This is initial commit. 
 ![Initial commit](images/initial_commit.png)
 
 
@@ -18,17 +18,18 @@ This is initial commit.
 
 
 
-
+# Stubs for classes
 ![Added stubs for classes](images/stubs-for-classes.png)
 
+# Tags
 ![git tag](images/tag.png)
 
-
+# Method to car park
 ![Add methods to the car park class](images/methods-to-car-park.png)
 
 
 
-Answer the following questions:
+# Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
@@ -50,7 +51,7 @@ Answer the following questions:
 > 
 > 
 > 
-
+# test_car_park
 > ![Unit tests](images/ValueError_not_raised.png)
 > test_removing_a_car_that_does_not_exist failed (AssertionError: ValueError not raised)
 > 
@@ -61,7 +62,8 @@ Answer the following questions:
 > 
 > ![Unit tests](images/Fixed_ValueError_not_raised.png)
 > Error Fixed, test passed
-> 
+>
+# test_display
 > ![Unit tests](images/Assertion_not_equal.png)
 > test_update failed (AssertionNotEqual)
 > 
@@ -71,3 +73,20 @@ Answer the following questions:
 > 
 > ![Unit tests](images/Fixed_AssertionError.png)
 > Error Fixed, test passed
+
+# Test the car park register method
+```
+The car park register method should accept a Sensor or Display object. 
+It should raise a TypeError if the object is neither a Sensor nor a Display. 
+Before proceeding, think about where you would test this behaviour. 
+Should you test it in the CarPark unit tests or the Sensor unit tests? Why?
+
+- Register method should be tested within the CarPark unit test.
+The register method belongs to the CarPark class 
+and is responsible for handling the registration of Sensor or Display object.
+```
+
+# test_sensor
+> ![Unit tests](images/TestSensor_all_passed.png)
+
+

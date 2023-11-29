@@ -34,15 +34,18 @@ class CarPark:
             self.displays.append(component)
 
     def add_car(self, plate):
+
         self.plates.append(plate)
+        print(f"Car with plate '{plate}' registered n the car park.")
         self.update_displays()
 
     def remove_car(self, plate):
         if plate in self.plates:
             self.plates.remove(plate)
+            print(f"Car with plate '{plate}' removed from the car park.")
             self.update_displays()
-        else:
-            raise ValueError("This car has not been registered in ths car park")
+        # else:
+        #    raise ValueError("This car has not been registered in this car park")
 
     def update_displays(self):
         for display in self.displays:
