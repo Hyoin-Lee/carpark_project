@@ -9,19 +9,18 @@ class CarPark:
     def __init__(self,
                  location,
                  capacity,
-                 log_file='log.txt',
                  plates=None,
                  sensors=None,
-                 displays=None):
+                 displays=None,
+                 log_file='log.txt'):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
-        # convert file name to path and create it
-        self.log_file = Path(log_file)
-        if not self.log_file.exists():
-            self.log_file.touch()
+        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
+        # create the file if it doesn't exist:
+        self.log_file.touch(exist_ok=True)
 
     @property
     def available_bays(self):
@@ -41,24 +40,20 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
-    def _log_car(self, action, plate):
+    def _log_car_activity(self, action, plate):
         with self.log_file.open(mode='a') as file:
-            file.write(f'{plate} {action} on the {datetime.now().strftime("%d-%m %H:%M")}\n')
+            file.write(f'{plate} {action} at {datetime.now() :%Y-%m"%d %H:%M:%S")}\n')
 
     def add_car(self, plate):
         self.plates.append(plate)
-        self._log_car("entered", plate)
-        # print (f"Car with plate '{plate}' registered n the car park.")
-        # self.update_displays()
+        self.update_displays()
+        self._log_car_activity("entered", plate)
 
     def remove_car(self, plate):
         if plate in self.plates:
             self.plates.remove(plate)
-            self._log_car("exited", plate)
-            # print(f"Car with plate '{plate}' removed from the car park.")
-            # self.update_displays()
-        # else:
-        #    raise ValueError("This car has not been registered in this car park")
+            self._log_car_activity("exited", plate)
+
 
     def update_displays(self):
         for display in self.displays:
