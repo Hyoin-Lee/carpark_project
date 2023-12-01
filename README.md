@@ -93,12 +93,13 @@ and is responsible for handling the registration of Sensor or Display object.
 > 
 # CarPark class with new methods 
 > ![Added methods to the car park class](images/CarPark_class_with_new_methods.png)
+# 10th tag
+> ![Added methods to the car park class](images/Github_repository_with_10th_tag.png)
 
-# All tags list
-> ![Added methods to the car park class](images/tag_list.png)
 
 
 # Output of the main.py file
 >![Main.py output](images/Output_of_main.py.png)
 > 
-# 
+# All tag list
+>![All tags](images/tag_list.png)
