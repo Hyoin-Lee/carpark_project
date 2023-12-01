@@ -89,5 +89,16 @@ and is responsible for handling the registration of Sensor or Display object.
 # test_sensor
 > ![Unit tests](images/TestSensor_all_passed.png)
 > All test passed
+> 
+> 
+# CarPark class with new methods 
+> ![Added methods to the car park class](images/CarPark_class_with_new_methods.png)
+
+# All tags list
+> ![Added methods to the car park class](images/tag_list.png)
 
 
+# Output of the main.py file
+>![Main.py output](images/Output_of_main.py.png)
+> 
+# 
