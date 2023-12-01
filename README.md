@@ -103,3 +103,10 @@ and is responsible for handling the registration of Sensor or Display object.
 > 
 # All tag list
 >![All tags](images/tag_list.png)
+> 
+> 
+# Create release
+![Create a release](images/Create-release.png)
+
+# Publish release
+![Publish a release](images/publish-release.png)
