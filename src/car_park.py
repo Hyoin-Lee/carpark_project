@@ -1,11 +1,15 @@
 from sensor import Sensor
 from display import Display
+from pathlib import Path
+from datetime import datetime
+# import json
 
 
 class CarPark:
     def __init__(self,
                  location,
                  capacity,
+                 log_file='log.txt',
                  plates=None,
                  sensors=None,
                  displays=None):
@@ -14,6 +18,10 @@ class CarPark:
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
+        # convert file name to path and create it
+        self.log_file = Path(log_file)
+        if not self.log_file.exists():
+            self.log_file.touch()
 
     @property
     def available_bays(self):
@@ -33,17 +41,22 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
-    def add_car(self, plate):
+    def _log_car(self, action, plate):
+        with self.log_file.open(mode='a') as file:
+            file.write(f'{plate} {action} on the {datetime.now().strftime("%d-%m %H:%M")}\n')
 
+    def add_car(self, plate):
         self.plates.append(plate)
-        print(f"Car with plate '{plate}' registered n the car park.")
-        self.update_displays()
+        self._log_car("entered", plate)
+        # print (f"Car with plate '{plate}' registered n the car park.")
+        # self.update_displays()
 
     def remove_car(self, plate):
         if plate in self.plates:
             self.plates.remove(plate)
-            print(f"Car with plate '{plate}' removed from the car park.")
-            self.update_displays()
+            self._log_car("exited", plate)
+            # print(f"Car with plate '{plate}' removed from the car park.")
+            # self.update_displays()
         # else:
         #    raise ValueError("This car has not been registered in this car park")
 
